@@ -15,7 +15,7 @@ _ft_puts:
 	push rbp
 	mov rbp, rsp
 
-	cmp rdi, 0
+	cmp rdi, byte 0
 	je .nul_ret
 
 .print_param:
@@ -29,8 +29,7 @@ _ft_puts:
 	mov rsi, r8
 	mov rdx, r9
 	syscall
-	; test rax, rax
-	; js .end_fail
+	jc .end_fail
 
 .print_newline:
 	mov rax, MACH_SYSCALL(WRITE)
@@ -38,10 +37,7 @@ _ft_puts:
 	lea rsi, [rel newline]
 	mov rdx, 1
 	syscall
-	; test rax, rax
-	; js .end_fail
-	cmp rax, 1
-	jne .end_fail
+	jc .end_fail
 
 	mov rax, 10
 	jmp .end
@@ -52,7 +48,6 @@ _ft_puts:
 	ret
 
 .end_fail:
-	neg rax
 	mov rax, EOF
 	jmp .end
 
@@ -63,6 +58,5 @@ _ft_puts:
 	lea rsi, [rel nul]
 	mov rdx, 6
 	syscall
-	; test rax, rax
-	; js .end_fail
+	jc .end_fail
 	jmp .print_newline
