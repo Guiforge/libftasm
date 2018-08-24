@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 22:15:33 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/20 22:26:08 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/24 14:05:42 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ int		test_strlen()
 	{
 		do_test(count);
 		count++;
-		printf("√");
 	}
-	printf("\n");
+	printf("√... [%d tests]\n", count);
 	return (count);
 }

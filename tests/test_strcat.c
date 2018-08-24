@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 12:05:09 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/21 12:07:39 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/24 14:11:28 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int test_strcat() {
 	ft_strcat(buf, "");
 	assert(strcmp(buf, "Bonjour.") == 0);
 	assert(buf == ft_strcat(buf, ""));
-	test_nb += 2;
-	printf("√√\n");
+	test_nb += 5;
+	printf("√... [%d tests]\n", test_nb);
 	return (test_nb);
 }

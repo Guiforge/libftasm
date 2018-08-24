@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/24 11:30:44 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/24 12:39:18 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_puts(const char *s);
 void				*ft_memset(void *b, int c, size_t len);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
 
 #endif

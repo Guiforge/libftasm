@@ -3,3 +3,4 @@
 objs/
 *.o
 test
+.DS_Store

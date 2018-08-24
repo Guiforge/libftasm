@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 21:52:21 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/20 22:26:13 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/24 14:04:55 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int		test_bzero() {
 	while (count <= 40) {
 		do_test(string_test, string, count);
 		count++;
-		printf("√");
 	}
-	printf("\n");
+	printf("√... [%d tests]\n", count);
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 15:41:11 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/24 12:07:47 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/24 15:30:54 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@ static int	test_ascii(char *name, int (*ft_f)(int), int (*f)(int)) {
 
 	test_nb = 0;
 	printf("\n%s: ", name);
-	car = -4;
-	while(car <= 200) {
+	car = -400;
+	while(car <= 400) {
 		assert(ft_f(car) == f(car));
 		test_nb++;
 		car++;
-		printf("√");
 	}
-	printf("\n");
+	printf("√... [%d tests]\n", test_nb);
 	return (test_nb);
 }
 
@@ -46,6 +45,7 @@ int main() {
 	test_nb += test_ascii("ft_tolower", ft_tolower, tolower);
 	test_nb += test_strcat();
 	test_nb += test_memset();
+	test_nb += test_memcpy();
 	printf("\n ---- Total %zu tests passed ---- \n\n", test_nb);
 
 }
