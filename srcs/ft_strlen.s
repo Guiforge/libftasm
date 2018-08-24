@@ -2,16 +2,17 @@ section .text align=16
 	global _ft_strlen
 
 _ft_strlen:
-    push rbp
-    mov rbp, rsp
-	xor   rcx, rcx
+	push rbp
+	mov rbp, rsp
 
-.next:
-	cmp [rdi], byte 0
-	je .end
-	inc rdi
-	inc rcx
-	jmp .next
+	push rdi
+	cld
+	mov rax, 0
+	mov rcx, -1
+	repne scasb
+	add rcx, 2
+	neg rcx
+	pop rdi
 
 .end: 
 	mov rax, rcx

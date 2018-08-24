@@ -15,17 +15,10 @@ _ft_memcpy:
 		je .end
 
 
-	.start_copy: 
-		xor rcx, rcx
-		.copy:
-			cmp rcx, rdx
-				je .end
-			mov al, [rsi]
-			mov [rdi], al
-			inc rcx
-			inc rsi
-			inc rdi
-		jmp .copy
+	.start_copy:
+		cld
+		mov rcx, rdx
+		rep movsb
 
 	.end:
 		pop rdi
