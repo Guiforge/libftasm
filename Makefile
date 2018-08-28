@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/08 23:02:42 by gpouyat           #+#    #+#              #
-#    Updated: 2018/08/24 14:40:45 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/08/28 15:31:02 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ifeq ($(SAN),yes)
 endif
 
 SRCS_TEST=test_bzero.c test_strlen.c test_puts.c test_strcat.c test_memset.c \
-		test_memcpy.c
+		test_memcpy.c test_strdup.c
 SRCSDIR_TEST=./tests
 SRCS_TESTS=$(SRCS_TEST:%.c=$(SRCSDIR_TEST)/%.c)
 
@@ -32,7 +32,7 @@ SRCDIR=./srcs/
 ARCH=macho64
 SRCS=ft_bzero.s ft_strlen.s ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s \
 		ft_isprint.s ft_toupper.s ft_tolower.s ft_puts.s ft_strcat.s ft_memset.s \
-		ft_memcpy.s
+		ft_memcpy.s ft_strdup.s ft_memalloc.s ft_strcpy.s
 
 OBJS=$(SRCS:%.s=$(OBJS_DIR)/%.o)
 

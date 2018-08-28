@@ -16,7 +16,6 @@ _ft_strlen:
 
 .end: 
 	mov rax, rcx
-
 	mov rsp, rbp
 	pop rbp
 	ret

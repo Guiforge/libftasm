@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 15:41:11 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/24 16:00:10 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/28 15:30:45 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int main() {
 	test_nb += test_strcat();
 	test_nb += test_memset();
 	test_nb += test_memcpy();
+	test_nb += test_strdup();
+
 	printf("\n ---- Total %zu tests passed ---- \n\n", test_nb);
 
 }

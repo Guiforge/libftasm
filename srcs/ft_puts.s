@@ -14,6 +14,8 @@ extern _ft_strlen
 _ft_puts:
 	push rbp
 	mov rbp, rsp
+	push r8
+	push r9
 
 	cmp rdi, byte 0
 	je .nul_ret
@@ -43,6 +45,8 @@ _ft_puts:
 	jmp .end
 
 .end:
+	pop r8
+	pop r9
 	mov rsp, rbp
 	pop rbp
 	ret

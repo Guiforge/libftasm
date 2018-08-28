@@ -5,6 +5,8 @@ extern _ft_strlen
 _ft_strcat:
 	push rbp
 	mov rbp, rsp
+	push r8
+	push r9
 
 	; save src
 	mov r8, rdi
@@ -28,6 +30,8 @@ _ft_strcat:
 
 .end:
 	mov rax, r8
+	pop r8
+	pop r9
 	mov rsp, rbp
 	pop rbp
 	ret
