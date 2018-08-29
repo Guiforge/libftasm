@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/08 23:02:42 by gpouyat           #+#    #+#              #
-#    Updated: 2018/08/29 13:53:41 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/08/29 19:10:38 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCSDIR_TEST=./tests
 SRCS_TESTS=$(SRCS_TEST:%.c=$(SRCSDIR_TEST)/%.c)
 
 NAME=libfts.a
+NAME_TEST=test
 OBJS_DIR=./objs
 SRCDIR=./srcs/
 ARCH=macho64
@@ -52,6 +53,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(NAME_TEST)
 
 re: fclean all
 
