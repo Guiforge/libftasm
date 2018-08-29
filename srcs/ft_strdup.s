@@ -17,11 +17,14 @@ _ft_strdup:
 
 
 	mov rdi, r9
+	push r8
 	call _ft_memalloc
+	pop r8
+	mov r9, rax
 	cmp rax, 0
 	je .end
 
-	mov rdi, rax
+	mov rdi, r9
 	mov rsi, r8
 	call _ft_strcpy
 

@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strlen.c                                      :+:      :+:    :+:   */
+/*   test_memalloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/20 22:15:33 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/29 13:55:55 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/08/29 13:47:35 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/08/29 18:27:07 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-static void	do_test(int nb)
+int		test_memalloc()
 {
-	char *string;
-
-	string = calloc(nb + 1, 1);
-	memset(string, 't', nb);
-	assert(strlen(string) == ft_strlen(string));
-	free(string);
-}
-
-int		test_strlen()
-{
-	int count;
+	int		count;
+	char	*tmp;
+	char	*tmp1;
 
 	count = 0;
-	printf("\nft_strlen: ");
-
-	while (count <= 450)
+	printf("\nft_memalloc: ");
+	while (count <= 3000)
 	{
-		do_test(count);
-		count++;
+		tmp = ft_memalloc(count);
+		tmp1 = calloc(count, 1);
+		if (tmp && tmp1)
+			assert(!memcmp(tmp, tmp1, count));
+		free(tmp1);
+		free(tmp);
+		++count;
+
 	}
-	printf("√... [%d tests]\n", count);
-	return (count);
+	printf("√... [%d tests]\n", count);	
+	return(count);
 }

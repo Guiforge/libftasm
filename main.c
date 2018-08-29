@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 15:41:11 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/28 15:30:45 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/29 19:02:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ int main() {
 
 	test_nb = 0;
 	printf("#### start tests ####\n");
-	test_nb += test_bzero();
-	test_nb += test_puts();
-	test_nb += test_strlen();
+
 	test_nb += test_ascii("ft_isalpha", ft_isalpha, isalpha);	
 	test_nb += test_ascii("ft_isdigit", ft_isdigit, isdigit);
 	test_nb += test_ascii("ft_isalnum", ft_isalnum, isalnum);
@@ -43,10 +41,16 @@ int main() {
 	test_nb += test_ascii("ft_isprint", ft_isprint, isprint);
 	test_nb += test_ascii("ft_toupper", ft_toupper, toupper);
 	test_nb += test_ascii("ft_tolower", ft_tolower, tolower);
+	test_nb += test_bzero();
+	test_nb += test_puts();
+	test_nb += test_strlen();
 	test_nb += test_strcat();
 	test_nb += test_memset();
 	test_nb += test_memcpy();
+	test_nb += test_memalloc();
 	test_nb += test_strdup();
+	test_nb += test_cat();
+	// ft_cat(1);
 
 	printf("\n ---- Total %zu tests passed ---- \n\n", test_nb);
 

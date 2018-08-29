@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strlen.c                                      :+:      :+:    :+:   */
+/*   test_cat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/20 22:15:33 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/29 13:55:55 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/08/20 21:52:21 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/08/29 18:57:05 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-static void	do_test(int nb)
+
+int			test_cat(void)
 {
-	char *string;
+	int		fd;
 
-	string = calloc(nb + 1, 1);
-	memset(string, 't', nb);
-	assert(strlen(string) == ft_strlen(string));
-	free(string);
-}
-
-int		test_strlen()
-{
-	int count;
-
-	count = 0;
-	printf("\nft_strlen: ");
-
-	while (count <= 450)
+	puts("\nft_cat: ");
+	fd = open("./main.c", O_RDONLY);
+	if (fd < 0)
 	{
-		do_test(count);
-		count++;
+		printf("ERROR");
+		return(0);
 	}
-	printf("√... [%d tests]\n", count);
-	return (count);
+	ft_cat(fd);
+	close(fd);
+	ft_cat(STDIN_FILENO);
+	ft_cat(-1);
+	puts("√... [2 tests]\n");	
+	return(2);
 }

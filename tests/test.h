@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 21:52:44 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/28 15:30:34 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/29 19:04:40 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <limits.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 int		test_bzero(void);
 int		test_strlen(void);
@@ -28,5 +31,7 @@ int		test_strcat(void);
 int		test_memset(void);
 int		test_memcpy(void);
 int		test_strdup(void);
+int		test_cat(void);
+int		test_memalloc(void);
 
 #endif

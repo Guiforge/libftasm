@@ -1,7 +1,8 @@
-%define STDOUT              1
-%define WRITE               4
-%define MACH_SYSCALL(x)     0x2000000 | x
+%define STDOUT				1
+%define WRITE				4
+%define MACH_SYSCALL(x)		0x2000000 | x
 %define EOF					-1
+
 
 section .data
 	newline db 10
