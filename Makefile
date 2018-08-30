@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/08 23:02:42 by gpouyat           #+#    #+#              #
-#    Updated: 2018/08/29 20:38:47 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/08/30 15:47:51 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRCDIR=./srcs/
 ARCH=macho64
 SRCS=ft_bzero.s ft_strlen.s ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s \
 		ft_isprint.s ft_toupper.s ft_tolower.s ft_puts.s ft_strcat.s ft_memset.s \
-		ft_memcpy.s ft_strdup.s ft_memalloc.s ft_strcpy.s ft_cat.s ft_strncpy.s
+		ft_memcpy.s ft_strdup.s ft_memalloc.s ft_strcpy.s ft_cat.s ft_strncpy.s \
+		ft_putstr.s ft_putstr_fd.s
 
 OBJS=$(SRCS:%.s=$(OBJS_DIR)/%.o)
 
