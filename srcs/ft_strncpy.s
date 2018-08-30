@@ -1,10 +1,10 @@
 section .text align=16
 
-global _ft_strcpy
+global _ft_strncpy
 extern _ft_strlen
 extern _ft_memcpy
 
-_ft_strcpy:
+_ft_strncpy:
 	push rbp
 	mov rbp, rsp
 
@@ -15,10 +15,12 @@ _ft_strcpy:
 	call _ft_strlen
 	inc rax
 	mov r9, rax
+	cmp rax, rdx 
+	jl .lower
 
-	mov rdi, r8
-	mov rdx, rax
-	call _ft_memcpy
+	.copy:
+		mov rdi, r8
+		call _ft_memcpy
 
 	.end:
 		pop r8
@@ -26,3 +28,7 @@ _ft_strcpy:
 		mov rsp, rbp
 		pop rbp
 		ret
+
+	.lower:
+		mov rdx, rax
+		jmp .copy

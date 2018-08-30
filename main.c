@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 15:41:11 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/29 19:02:20 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/30 12:43:08 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int main() {
 	test_nb += test_memalloc();
 	test_nb += test_strdup();
 	test_nb += test_cat();
+	test_nb += test_strcpy();
+	test_nb += test_strncpy();
 	// ft_cat(1);
 
 	printf("\n ---- Total %zu tests passed ---- \n\n", test_nb);

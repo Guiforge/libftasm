@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 21:52:44 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/29 19:04:40 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/29 20:38:11 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int		test_memcpy(void);
 int		test_strdup(void);
 int		test_cat(void);
 int		test_memalloc(void);
+int		test_strncpy(void);
+int		test_strcpy(void);
 
 #endif

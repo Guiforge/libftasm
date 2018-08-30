@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/08/29 10:11:38 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/08/30 12:35:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void				*ft_memcpy(void *dst, const void *src, size_t n);
 char				*ft_strdup(const char *s1);
 void				*ft_memalloc(size_t len);
 char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strncpy(char *dest, const char *src, size_t len);
 void				ft_cat(int fd);
 
 #endif
