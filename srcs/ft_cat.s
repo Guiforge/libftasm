@@ -15,6 +15,11 @@ _ft_cat:
 	push rsp
 	mov rsp, rbp
 
+	push rdi
+	push rdx
+	push rax
+	push r8
+
 	lea rsi, [rel buffer]
 	mov r8, rdi
 
@@ -39,6 +44,10 @@ _ft_cat:
 	jmp .loop
 	
 	.end:
+		pop rdi
+		pop rdx
+		pop r8
+		pop rax
 		mov rsp, rbp
 		pop rbp
 		ret

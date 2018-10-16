@@ -6,10 +6,14 @@ _ft_memset:
 	mov rbp, rsp
 
 	push rdi
+	push rcx
+
 	mov rcx, rdx
 	mov rax, rsi
 	cld
 	rep stosb
+
+	pop rcx
 	pop rdi
 
 .end:

@@ -1,37 +1,21 @@
 section .text align=16
 global _ft_strcat
 extern _ft_strlen
+extern _ft_strcpy
 
 _ft_strcat:
 	push rbp
 	mov rbp, rsp
-	push r8
-	push r9
-
-	; save src
-	mov r8, rdi
-
-	; strlen src
 	push rdi
+
 	call _ft_strlen
-	pop rdi
-	add rdi, rax
 
-	; add rdi, rax
-
-	.copy:
-		cmp [rsi], byte 0
-		je .end
-		mov  r9, [rsi]
-		mov  [rdi], r9
-		inc rdi
-		inc rsi
-	jmp .copy
+	add rdi, rax 
+	call _ft_strcpy
 
 .end:
-	mov rax, r8
-	pop r8
-	pop r9
+	pop rdi
+	mov rax, rdi
 	mov rsp, rbp
 	pop rbp
 	ret

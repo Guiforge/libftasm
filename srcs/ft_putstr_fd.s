@@ -11,6 +11,7 @@ _ft_putstr_fd:
 	mov rbp, rsp
 	push r8
 	push r9
+	push rax
 
 	cmp rdi, byte 0
 	je .end
@@ -30,6 +31,7 @@ _ft_putstr_fd:
 .end:
 	pop r8
 	pop r9
+	pop rax
 	mov rsp, rbp
 	pop rbp
 	ret

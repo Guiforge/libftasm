@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/08 23:02:42 by gpouyat           #+#    #+#              #
-#    Updated: 2018/08/30 15:47:51 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/10/16 10:07:04 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ ifeq ($(SAN),yes)
 endif
 
 SRCS_TEST=test_bzero.c test_strlen.c test_puts.c test_strcat.c test_memset.c \
-		test_memcpy.c test_strdup.c test_cat.c test_memalloc.c test_strcpy.c
+		test_memcpy.c test_strdup.c test_cat.c test_memalloc.c test_strcpy.c \
+		main_test.c
 SRCSDIR_TEST=./tests
 SRCS_TESTS=$(SRCS_TEST:%.c=$(SRCSDIR_TEST)/%.c)
 

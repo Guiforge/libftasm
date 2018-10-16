@@ -11,6 +11,13 @@ _ft_isalpha:
 	jl .not_alpha
 	jmp .ret_it_is_alpha
 
+.is_lowerAlpha:
+	cmp rdi, 'a'
+	jl .not_alpha
+	cmp rdi, 'z'
+	jg .not_alpha
+	jmp .ret_it_is_alpha
+
 .not_alpha:
 	xor rax, rax
 
@@ -24,10 +31,3 @@ _ft_isalpha:
 	mov rsp, rbp
 	pop rbp
 	ret
-
-.is_lowerAlpha:
-	cmp rdi, 'a'
-	jl .not_alpha
-	cmp rdi, 'z'
-	jg .not_alpha
-	jmp .ret_it_is_alpha

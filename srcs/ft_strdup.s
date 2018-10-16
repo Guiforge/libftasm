@@ -9,6 +9,7 @@ _ft_strdup:
 	push rbp
 	mov rbp, rsp
 	push r8
+	push r9
 
 	mov r8, rdi
 	call _ft_strlen
@@ -30,6 +31,7 @@ _ft_strdup:
 
 	.end:
 		pop r8
+		pop r9
 		mov rsp, rbp
 		pop rbp
 		ret
