@@ -9,6 +9,8 @@ extern _ft_strlen
 _ft_putstr_fd:
 	push rbp
 	mov rbp, rsp
+	sub rsp, 16
+
 	push r8
 	push r9
 	push rax

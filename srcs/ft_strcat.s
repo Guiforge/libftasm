@@ -6,6 +6,7 @@ extern _ft_strcpy
 _ft_strcat:
 	push rbp
 	mov rbp, rsp
+	sub rsp, 16
 	push rdi
 
 	call _ft_strlen

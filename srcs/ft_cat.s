@@ -10,45 +10,48 @@ buffer resb 1025
 section .text align=16
 global _ft_cat
 
-
 _ft_cat:
-	push rsp
-	mov rsp, rbp
 
-	push rdi
+	; prologue
+	push rbp
+	mov rbp, rsp
+	sub rsp, 16
+
 	push rdx
-	push rax
+	push rsi
+	push rdi
 	push r8
 
-	lea rsi, [rel buffer]
 	mov r8, rdi
-
 	.loop:
-		;READ
 		mov rdi, r8
+		lea rsi, [rel buffer]
 		mov rdx, BUF_SIZE
 		mov rax, MACH_SYSCALL(READ)
 		syscall
-		jc .end
+		jc .error
 		cmp rax, 0
-		jle .end
+		je .end
 
-		;WRITE
 		mov rdi, STDOUT
 		mov rdx, rax
 		mov rax, MACH_SYSCALL(WRITE)
 		syscall
-		jc .end
-		cmp rax, 0
-		jle .end
+		jc .error
 	jmp .loop
-	
+
+
+
 	.end:
-		pop rdi
 		pop rdx
-		pop r8
-		pop rax
+		pop rsi
+		pop rdi
 		mov rsp, rbp
 		pop rbp
 		ret
+
+	.error:
+		; pop rdi
+		mov rax, 1
+		jmp .end
 

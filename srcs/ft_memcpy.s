@@ -4,6 +4,7 @@ global _ft_memcpy
 _ft_memcpy:
 	push rbp
 	mov rbp, rsp
+	sub rsp, 16
 
 	push rdi
 	push rsi

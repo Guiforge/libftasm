@@ -2,22 +2,25 @@ section .text align=16
 global _ft_memalloc
 extern _ft_bzero
 extern _malloc
+extern _memset
 
 _ft_memalloc:
 	push rbp
 	mov rbp, rsp
-	push r9
+	sub rsp, 32
 
-	mov r8, rdi
-	push r8
+	push r9
+	push rdi
+
 	call _malloc
-	pop r8
+
 	mov r9, rax
 	cmp rax, 0
 	je .end
+	pop rdi
 
+	mov rsi, rdi
 	mov rdi, rax
-	mov rsi, r8
 	call _ft_bzero
 
 

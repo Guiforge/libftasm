@@ -4,6 +4,7 @@ section .text align=16
 _ft_strlen:
 	push rbp
 	mov rbp, rsp
+	sub rsp, 16
 
 	push rdi
 	cld

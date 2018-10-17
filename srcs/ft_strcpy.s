@@ -7,6 +7,7 @@ extern _ft_memcpy
 _ft_strcpy:
 	push rbp
 	mov rbp, rsp
+	sub rsp, 16
 
 	push r8
 	push r9

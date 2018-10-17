@@ -1,37 +1,32 @@
 section .text align=16
+global _ft_strdup
 extern _ft_strlen
 extern _ft_memalloc
 extern _ft_strcpy
-global _ft_strdup
 
-;rdi, rsi rdx
 _ft_strdup:
 	push rbp
-	mov rbp, rsp
-	push r8
-	push r9
+	mov rbp,rsp
+	sub rsp, 0x20
 
-	mov r8, rdi
+	mov QWORD [rbp - 0x10], rdi ; save rdi
+	mov QWORD [rbp - 0x8], 0x0 ; set return
+
+	; cmp QWORD [rbp - 0x10], 0x0
+	; je .end
+
 	call _ft_strlen
-	mov r9, rax
-	inc r9
-
-
-	mov rdi, r9
-	push r8
+	mov rdi, rax
 	call _ft_memalloc
-	pop r8
-	mov r9, rax
-	cmp rax, 0
+	cmp rax, 0x0
 	je .end
-
-	mov rdi, r9
-	mov rsi, r8
+	
+	mov rdi, rax
+	mov rsi, QWORD [rsp + 0x10]
 	call _ft_strcpy
-
+	mov QWORD [rbp - 0x8], rax
 	.end:
-		pop r8
-		pop r9
-		mov rsp, rbp
+		mov rax, QWORD [rbp - 0x8]
+		add rsp, 0x20
 		pop rbp
 		ret

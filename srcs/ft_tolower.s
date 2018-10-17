@@ -4,6 +4,7 @@ global _ft_tolower
 _ft_tolower:
 	push rbp
 	mov rbp, rsp
+	sub rsp, 16
 
 	cmp rdi, 'A'
 	jl .not_upper
